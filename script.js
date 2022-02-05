@@ -1,3 +1,7 @@
+setTimeout(function(){
+  document.body.className="";
+},500);
+
 let nextButton = document.body.querySelector('.btn2')
 let previousButton=document.body.querySelector('.btn1')
 let lines = document.body.querySelectorAll('.line')
@@ -7,8 +11,10 @@ console.log(circles.length)
 console.log(circles[3])
 
 nextButton.addEventListener("click", function(){
+  console.log('working')
 for(i=0;i<circles.length-1;i++){
   if (lines[i].classList.contains("active")===false ){
+    nextButton.style.pointerEvents='auto';
     circles[i+1].classList.add('active');
     lines[i].classList.add('active')
     break
@@ -16,7 +22,9 @@ for(i=0;i<circles.length-1;i++){
 
 }
 if(lines[2].classList.contains("active")){
-  nextButton.innerText='Finish'
+
+  nextButton.innerText='Finished'
+
 }
 
 })
